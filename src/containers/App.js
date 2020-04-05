@@ -4,13 +4,14 @@ import Main from '../components/Main'
 import Sidebar from '../components/Sidebar'
 import store from '../store'
 
+
 const App = () => {
-  const { contacts } = store.getState()
-  console.log(contacts)
+  const { contacts, user, activeUserId } = store.getState()
+  
   return (
     <div className="App">
       <Sidebar contacts={Object.values(contacts)}/>
-      <Main />
+      <Main user={user} activeUserId={activeUserId} />
     </div>
   )
 }
